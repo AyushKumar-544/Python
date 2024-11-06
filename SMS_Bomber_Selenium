@@ -1,0 +1,28 @@
+from selenium import webdriver
+import time
+
+browser = webdriver.Chrome()
+
+for x in range(2):
+    browser.get('https://www.facebook.com/login/identify/?__mmr=1&_rdr')
+    number = browser.find_element('xpath','//*[@id="identify_email"]')
+    did_submit = browser.find_element('name','did_submit')
+    number.send_keys("+91XXXXXXXXXX")
+    did_submit.click()
+    time.sleep(3)
+    submit = browser.find_element('xpath','//*[@id="content"]/div/div[2]')
+    submit.click()
+    time.sleep(3)
+
+    this_is_account = browser.find_element('xpath','//*[@id="login_form"]/div/div[2]/ul/li[2]/div/table/tbody/tr/td[2]/a')
+    this_is_account.click()
+    time.sleep(3)
+    
+    continue_but = browser.find_element('xpath','/html/body/div[1]/div[1]/div[1]/div/div[2]/form/div/div[3]/div/div[1]/button')
+    continue_but.click()
+    time.sleep(3)
+ 
+
+
+
+   
